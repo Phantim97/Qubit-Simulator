@@ -4,10 +4,9 @@
 
 int main()
 {
-	Qubit q(1);
+	Qubit q(0);
 
-	q.M();
-	q.X();
-	q.M();
+	q.M()->H()->M()->H()->M();
+
 	return 0;
 }

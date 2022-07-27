@@ -53,10 +53,10 @@ public:
 		}
 	}
 
-	void X();
-	void Y();
-	void Z();
-	void H();
+	Qubit* X();
+	Qubit* Y();
+	Qubit* Z();
+	Qubit* H();
 
-	void M();
+	Qubit* M();
 };
