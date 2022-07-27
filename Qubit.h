@@ -12,6 +12,11 @@ struct Probability
 		this->s0 = !init_state;
 		this->s1 = init_state;
 	}
+
+	bool operator==(const Probability&other) const
+	{
+		return this->s0 == other.s0 && this->s1 == other.s1;
+	}
 };
 
 struct Amplitudes
@@ -31,6 +36,11 @@ struct Amplitudes
 			beta.real(1);
 			alpha.imag(0);
 		}
+	}
+
+	bool operator==(const Amplitudes& other) const
+	{
+		return this->alpha == other.alpha && this->beta == other.beta;
 	}
 };
 
@@ -61,4 +71,9 @@ public:
 	Qubit* H();
 
 	Qubit* M();
+
+	bool operator==(const Qubit& q) const
+	{
+		return this->amplitude_ == q.amplitude_ && this->probability_ == q.probability_;
+	}
 };
