@@ -1,6 +1,7 @@
 #pragma once
 #include <complex>
 
+//Probability of a State
 struct Probability
 {
 	double s0 = .5;
@@ -15,20 +16,20 @@ struct Probability
 
 struct Amplitudes
 {
-	std::complex<double> s0 = { 0,0 };
-	std::complex<double> s1 = { 0 ,0 };
+	std::complex<double> alpha = { 0,0 };
+	std::complex<double> beta = { 0 ,0 };
 
 	void set_amplitudes(const bool state)
 	{
 		if (state == 0)
 		{
-			s0.real(1);
-			s0.imag(0);
+			alpha.real(1);
+			alpha.imag(0);
 		}
 		else
 		{
-			s1.real(1);
-			s0.imag(0);
+			beta.real(1);
+			alpha.imag(0);
 		}
 	}
 };
@@ -36,6 +37,7 @@ struct Amplitudes
 class Qubit
 {
 private:
+	//Note |psi> = a|0> + b|1> where |a|^2 + |b|^2 = 1 (alpha and beta)
 	Probability probability_;
 	Amplitudes amplitude_;
 public:
@@ -45,11 +47,11 @@ public:
 
 		if (probability_.s0 == 1)
 		{
-			amplitude_.s0 = 1;
+			amplitude_.alpha = 1;
 		}
 		else
 		{
-			amplitude_.s1 = 1;
+			amplitude_.beta = 1;
 		}
 	}
 
