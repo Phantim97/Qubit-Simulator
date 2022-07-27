@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include "Qubit.h"
 
 int main()

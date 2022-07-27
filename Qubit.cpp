@@ -1,5 +1,4 @@
 #include "Qubit.h"
-
 #include <iostream>
 
 //Pauli-X Gate
