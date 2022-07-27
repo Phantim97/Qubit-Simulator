@@ -6,7 +6,7 @@ int main()
 {
 	Qubit q(0);
 
-	q.M()->H()->M()->H()->M();
+	q.M()->H()->Y()->Z()->Y()->H()->M();
 
 	return 0;
 }

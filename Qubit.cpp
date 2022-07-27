@@ -34,7 +34,8 @@ Qubit* Qubit::Y()
 	}
 	else
 	{
-		
+		amplitude_.s0.real(amplitude_.s0.real() * -1);
+		amplitude_.s1.real(amplitude_.s1.real() * -1);
 	}
 
 	return this;
@@ -47,7 +48,10 @@ Qubit* Qubit::Z()
 	{
 		probability_.s0 = 0.5;
 		probability_.s1 = 0.5;
-	
+		amplitude_.s0.real(amplitude_.s0.real() * -1);
+		amplitude_.s0.imag(amplitude_.s0.imag() * -1);
+		amplitude_.s1.real(amplitude_.s1.real() * -1);
+		amplitude_.s1.imag(amplitude_.s1.imag() * -1);
 	}
 
 	return this;
