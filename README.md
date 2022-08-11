@@ -5,5 +5,3 @@ Supports a curcuit-like implementation upon instantiating the qubit:
 Qubit q(0);
 
 q.H()->Z()->H()->M(); //|0> goes to |1>
-
-TBD whether more will be added or revised.

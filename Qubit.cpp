@@ -103,5 +103,23 @@ Qubit* Qubit::M()
 		<< amplitude_.alpha.real() << " + " << amplitude_.alpha.imag()
 		<< "i, " << amplitude_.beta.real() << " + " << amplitude_.beta.imag() << "i]\n\n";
 
+	//Primitve Rand needed for a 50/50 since there is no S,T,S+,T+ gates implemented
+	//Which would move the state away from the equator of the Bloch Sphere
+	int computational_bit = 0;
+
+	if (probability_.s0 == 1)
+	{
+		computational_bit = 0;
+	}
+	else if (probability_.s1 == 1)
+	{
+		computational_bit = 1;
+	}
+	else
+	{
+		computational_bit = rand() % 2;
+	}
+
+	std::cout << "Actual Measured Value: [" << computational_bit << "]\n";
 	return this;
 }
